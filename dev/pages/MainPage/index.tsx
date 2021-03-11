@@ -12,7 +12,7 @@ const MainPage: React.FC = (props) => {
           content="Component boilerplate for prisma-cms"
         />
       </Head>
-      <App {...props} />
+      111 <App num={111} one="Рубль" two="Рубля" many="Рублей" {...props} />
     </>
   )
 }

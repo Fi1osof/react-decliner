@@ -1,7 +1,7 @@
 {
-  "name": "@prisma-cms/component-boilerplate",
-  "description": "Component for prisma-cms",
-  "version": "2.0.0",
+  "name": "react-decliner",
+  "description": "Word declension component",
+  "version": "1.0.0",
   "private": false,
   "main": "dist",
   "scripts": {
@@ -34,7 +34,10 @@
       "yarn format"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.12.1",
     "@next/bundle-analyzer": "^9.5.5",
@@ -74,8 +77,6 @@
     "next": "^10.0.1",
     "npm": "^6.14.8",
     "prettier": "^2.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
@@ -101,19 +102,19 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prisma-cms/component-boilerplate.git"
-  },
   "keywords": [
-    "prisma-cms",
-    "front",
-    "components"
+    "decline",
+    "words",
+    "russian"
   ],
   "author": "Fi1osof",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/prisma-cms/component-boilerplate/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fi1osof/react-decliner.git"
   },
-  "homepage": "https://github.com/prisma-cms/component-boilerplate#readme"
+  "bugs": {
+    "url": "https://github.com/Fi1osof/react-decliner/issues"
+  },
+  "homepage": "https://github.com/Fi1osof/react-decliner#readme"
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { action } from '@storybook/addon-actions'
 
 import { Meta } from '@storybook/react'
 import {
@@ -11,68 +10,32 @@ import {
   Stories,
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks'
-import styled from 'styled-components'
 
-type ButtonProps = {
-  text: string
-  backgroundColor?: string
-}
+import App, { ReactDeclinerProps as AppProps } from '../src'
 
-type ButtonStyledProps = {
-  backgroundColor?: string
-}
+const title = 'react-decliner'
 
-const Button = styled.button<ButtonStyledProps>`
-  border-radius: 3px;
-  border: 2px solid grey;
-
-  background-color: ${({ backgroundColor }) => backgroundColor || 'white'};
-  color: ${({ color, theme }) => color || theme.colors.primary};
-
-  &:hover {
-    border-color: 1px solid green;
-  }
-
-  &:active {
-    border-color: 1px solid red;
-  }
-`
-
-const title = 'Button'
-
-export const withText: React.FC<ButtonProps> = (props) => {
-  const { text, backgroundColor = 'white', ...other } = props
+export const ReactDecliner: React.FC<Partial<AppProps>> = (props) => {
+  const { num = 0, one = '', two = '', many = '', ...other } = props
 
   return (
-    <Button
-      {...other}
-      onClick={action('clicked')}
-      backgroundColor={backgroundColor}
-    >
-      {text}
-    </Button>
+    <>
+      {num} <App num={num} one={one} two={two} many={many} {...other} />
+    </>
   )
 }
 
-export const withSomeEmoji: React.FC<ButtonProps> = (props) => (
-  <Button {...props} onClick={action('clicked')}>
-    <span role="img" aria-label="so cool">
-      😀 😎 👍 💯
-    </span>
-  </Button>
-)
-
-const args: Partial<ButtonProps> = {
-  text: 'Hello Button',
+const args: Partial<AppProps> = {
+  one: 'Рубль',
+  two: 'Рубля',
+  many: 'Рублей',
+  num: 1,
 }
 
 export default {
   title,
-  component: withText,
-  argTypes: {
-    color: { control: 'color' },
-    backgroundColor: { control: 'color' },
-  },
+  component: ReactDecliner,
+  argTypes: {},
   args,
   parameters: {
     docs: {

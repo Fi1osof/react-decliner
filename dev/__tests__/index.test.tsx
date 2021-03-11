@@ -1,28 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
 import Component from '../../src'
 
 import { render } from '../tests/utils'
 
-const border = '1px solid green'
-
-const ComponentStyled = styled(Component)`
-  color: ${({ theme }) => theme.colors.primary};
-
-  border: ${border};
-`
-
 describe('Component', () => {
   it('Render default', () => {
-    const tree = render(<Component />)
+    const tree = render(
+      <>
+        1<Component num={1} one="Рубль" two="Рубля" many="Рублей" />
+        2<Component num={2} one="Рубль" two="Рубля" many="Рублей" />
+        5<Component num={5} one="Рубль" two="Рубля" many="Рублей" />
+        32
+        <Component num={32} one="Рубль" two="Рубля" many="Рублей" />
+      </>
+    )
     expect(tree.container).toMatchSnapshot()
-  })
-
-  it('Render styled', () => {
-    const tree = render(<ComponentStyled />)
-    const node = tree.container.children[0]
-    expect(tree.container).toMatchSnapshot()
-    expect(node).toMatchSnapshot()
-    expect(node).toHaveStyleRule('border', border)
   })
 })
