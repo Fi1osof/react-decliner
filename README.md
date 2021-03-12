@@ -7,7 +7,7 @@ import React from 'react'
 import ReactDecliner from 'react-decliner'
 
 export const MyComponent = () => {
-  return <ReactDecliner num={1} many="Рублей" one="Рубль" two="Рубля" />
+  return <ReactDecliner num={1} one="Рубль" two="Рубля" many="Рублей"/>
 }
 ```
 
